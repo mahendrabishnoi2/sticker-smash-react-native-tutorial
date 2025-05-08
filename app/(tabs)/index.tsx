@@ -1,6 +1,5 @@
-import { Image } from "expo-image";
-import { Link } from "expo-router";
-import { Text, View, StyleSheet } from "react-native";
+import ImageViewer from "@/components/ImageViewer";
+import { View, StyleSheet } from "react-native";
 
 const PlaceHolderImage = require("@/assets/images/background-image.png");
 
@@ -8,7 +7,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={PlaceHolderImage} style={styles.image} />
+        <ImageViewer imgSource={PlaceHolderImage} />
       </View>
     </View>
   );
@@ -23,10 +22,5 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
-  },
-  image: {
-    width: 320,
-    height: 440,
-    borderRadius: 18,
   },
 });
