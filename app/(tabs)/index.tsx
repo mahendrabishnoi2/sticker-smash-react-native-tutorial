@@ -8,6 +8,7 @@ import CircleButton from "@/components/CircleButton";
 import EmojiPicker from "@/components/EmojiPicker";
 import { type ImageSource } from "expo-image";
 import EmojiList from "@/components/EmojiList";
+import EmojiSticker from "@/components/EmojiSticker";
 
 const PlaceHolderImage = require("@/assets/images/background-image.png");
 
@@ -39,6 +40,7 @@ export default function Index() {
   const onReset = () => {
     setShowAppOptions(false);
     setSelectedImage(undefined);
+    setPickedEmoji(undefined);
   };
 
   const onAddSticker = () => {
@@ -60,6 +62,9 @@ export default function Index() {
           imgSource={PlaceHolderImage}
           selectedImage={selectedImage}
         />
+        {pickedEmoji && (
+          <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />
+        )}
       </View>
       {showAppOptions ? (
         <View style={styles.optionsContainer}>
